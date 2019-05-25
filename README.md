@@ -1,8 +1,18 @@
-# <>C lang
-&lt;>C is a simple and small extension of C language.
-## Precompiler
+# `<>C` lang
+`<>C` is a simple and small extension of C language.
+It add **templates**, **term rewriting macros**, **lambdas** and more..
 
-An earlier pre-compiler `CPPC` is available and written in `Python3`.
+## Motivations
+
+The project borns to support `microRX` a reactive framework for `C`. However to avoid writing a lot of repetitive code and for sake of generalisation I decided to write simple extension of `C` for getting some more metaprogramming options.
+
+## CPPC PrePreCompiler
+
+An earlier pre-compiler `CPPC` (The _CPPC Pre Pre Compiler_) is written in `Python3` and compile the `<>C` code to standard `C` code.
+To run the script simply:
+```
+./cppy.py FILE1 FILE2 ... -oOUTDIRECTORY
+```
 
 ## Language
 ### Template structures
