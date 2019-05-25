@@ -1,7 +1,13 @@
+#! /usr/bin/python3
+"""
+CPPC is the CPPC Pre Pre Compiler, born to translate `<>C` (notequalC) lang to `C`.
+Author: Martino Ferrari aka Mandarancio <manda.mgf@gmail.com>
+"""
 import re
 from collections import namedtuple
 import sys
 import os
+
 
 sources = []
 
@@ -9,12 +15,12 @@ sources = []
 Comment = namedtuple('Comment', 'start end')
 
 
-def clean(s):
+def __clean__(s):
     return ''.join([c if c.isalpha() else '_' for c in s])
     
 
 def t_hash(arguments):
-    return '_'.join([clean(s) for s in arguments])
+    return '_'.join([__clean__(s) for s in arguments])
     
 
 def impl_macro(name, arguments):
