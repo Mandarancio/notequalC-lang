@@ -1,7 +1,11 @@
 # <>C lang
 &lt;>C is a simple and small extension of C language.
+## Precompiler
 
-## Template structures
+An earlier pre-compiler `CPPC` is available and written in `Python3`.
+
+## Language
+### Template structures
 
 The first obvious think that could be integrated are template `struct`and `functions`, for example for a linked list in `C`  can be implemented like this: 
 
@@ -47,7 +51,7 @@ printf("size: %d\n", List<int>::size(el));
 Only the used functions and for the used types will be generated during compilation time.
 Using this syntax is possible to define function with same name (e.g. `size`) for different structure or problem using different namespaces.
 
-## Lambda functions
+### Lambda functions
 
 Another practical syntactic sugar is `lambda`: those permits to create in-line anonymous functions very simply :
 
@@ -60,9 +64,10 @@ int main() {
 }
 ```
 
-## Template functions
+### Template functions
 
-In many cases however template functions can be very useful even without any specific structure. In particular for my _reactive_ framework this would be very useful for mapping, filtering, converting and more, for example:
+In many cases however template functions can be very useful even without any specific namespace.
+
 ```c
 T convert<S,T>(S value)
 {
@@ -76,8 +81,8 @@ T convert<S,T>(S value)
 }
 ```
 
-## Rewriting macros
-For more generic problems it is possible to define rewriting macros:
+### Rewriting macros
+For more generic problems it is possible to define rewriting macros with the `@NAME<VARS>{}` synthax:
 
 ```c
 #include <stdio.h>
